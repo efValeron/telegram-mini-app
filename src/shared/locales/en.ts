@@ -10,11 +10,14 @@ import {
   Sagittarius,
   Scorpio,
   Taurus,
-  Virgo,
+  Virgo
 } from '@/assets/icons'
 import { ru } from '@/shared/locales/ru'
 
 export const en: typeof ru = {
+  titles: {
+    main: "Horoscope for Today"
+  },
   errors: {
     somethingWentWrong: 'Something went wrong. Check your internet connection and try again!',
     notFoundTitle: '404 Page Not Found',

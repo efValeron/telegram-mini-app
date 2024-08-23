@@ -10,10 +10,13 @@ import {
   Sagittarius,
   Scorpio,
   Taurus,
-  Virgo,
+  Virgo
 } from '@/assets/icons'
 
 export const ru = {
+  titles: {
+    main: "Гороскоп на сегодня"
+  },
   errors: {
     somethingWentWrong: 'Что-то пошло не так. Проверьте интернет соединение и попробуйте еще раз!',
     notFoundTitle: '404 Страница не найдена',

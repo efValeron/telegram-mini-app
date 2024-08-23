@@ -5,6 +5,12 @@
   padding: 1rem;
 }
 
+.title {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
 .link {
   border-radius: 5px;
   display: grid;
@@ -38,12 +44,14 @@
 .info {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 0.25rem
 }
 
 .name {
   color: var(--tg-theme-text-color);
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .period {

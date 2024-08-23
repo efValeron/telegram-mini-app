@@ -15,6 +15,7 @@ export const Home = () => {
 
   return (
     <div className={s.wrapper}>
+      <h1 className={s.title}>{l.titles.main}</h1>
       {Object.keys(l.names).map(key => {
         const Icon = l.icons[key as keyof typeof l.icons]
 

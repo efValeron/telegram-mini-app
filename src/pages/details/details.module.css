@@ -34,9 +34,5 @@
   font-size: 16px;
   color: var(--tg-theme-text-color);
   opacity: 70%;
-}
-
-.period {
-  font-size: 14px;
-  color: var(--tg-theme-subtitle-text-color);
+  line-height: 1.25;
 }
