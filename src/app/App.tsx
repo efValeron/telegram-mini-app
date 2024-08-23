@@ -1,7 +1,8 @@
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { useEffect } from 'react'
-import { tg } from '@/app/telegram'
+
 import { AppRoutes } from '@/app/routes'
+import { tg } from '@/app/telegram'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 export const App = () => {
   const queryClient = new QueryClient()

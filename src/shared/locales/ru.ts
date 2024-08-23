@@ -14,6 +14,11 @@ import {
 } from '@/assets/icons'
 
 export const ru = {
+  errors: {
+    somethingWentWrong: 'Что-то пошло не так. Проверьте интернет соединение и попробуйте еще раз!',
+    notFoundTitle: '404 Страница не найдена',
+    notFoundDescription: 'Кажется, вы попали на страницу, которой не существует.',
+  },
   names: {
     aries: 'Овен',
     taurus: 'Телец',

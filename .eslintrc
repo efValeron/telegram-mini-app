@@ -1,12 +1,8 @@
 {
-  "extends": [
-    "next/core-web-vitals"
-  ],
   "parser": "@typescript-eslint/parser",
   "plugins": [
     "react",
     "@typescript-eslint",
-    "import",
     "perfectionist"
   ],
   "rules": {
@@ -17,18 +13,6 @@
       "error",
       "all"
     ],
-    "import/extensions": [
-      "error",
-      {
-        "css": "always",
-        "json": "always",
-        "scss": "always",
-        "svg": "always"
-      }
-    ],
-    "import/no-duplicates": "off",
-    "import/order": "off",
-    "import/prefer-default-export": "off",
     "max-lines": [
       "error",
       300
@@ -46,7 +30,7 @@
     "no-duplicate-imports": "error",
     "no-empty-pattern": "off",
     "no-nested-ternary": "error",
-    "no-undef": "warn",
+    "no-undef": "off",
     "no-unused-vars": "off",
     "no-var": "error",
     "padding-line-between-statements": [
@@ -131,28 +115,6 @@
     ]
   },
   "settings": {
-    "import/parsers": {
-      "@typescript-eslint/parser": [
-        ".ts",
-        ".tsx"
-      ]
-    },
-    "import/resolver": {
-      "node": {
-        "extensions": [
-          ".js",
-          ".jsx",
-          ".ts",
-          ".tsx"
-        ],
-        "paths": [
-          "src"
-        ]
-      },
-      "typescript": {
-        "alwaysTryTypes": true
-      }
-    },
     "react": {
       "version": "detect"
     }

@@ -1,0 +1,18 @@
+.wrapper {
+  text-align: center;
+  position: relative;
+  padding: 0.5rem;
+  height: 100vh;
+  display: grid;
+  gap: 1rem;
+  place-content: center;
+}
+
+.title {
+  font-size: 26px;
+}
+
+.description {
+  font-size: 20px;
+  color: var(--tg-theme-subtitle-text-color);
+}

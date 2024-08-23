@@ -1,12 +1,13 @@
-import { useNavigate, useParams } from 'react-router-dom'
 import { useEffect } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
+
+import { tg } from '@/app/telegram'
+import { useLocale } from '@/shared/lib/hooks'
+import { GetHoroscope } from '@/shared/lib/types/server-responses'
 import { useQuery } from '@tanstack/react-query'
 import { Ring } from '@uiball/loaders'
 
 import s from './details.module.css'
-import { useLocale } from '@/shared/lib/hooks'
-import { tg } from '@/app/telegram'
-import { GetHoroscope } from '@/shared/lib/types/server-responses'
 
 export const Details = () => {
   const { l, isRu } = useLocale(tg.initDataUnsafe.user.language_code)
@@ -43,9 +44,9 @@ export const Details = () => {
     },
   })
 
-  if (!name) return <div>no name</div>
-
-  if (error) return <div>Error: {error.message}</div>
+  if (error) {
+    return <div className={s.error}>{l.errors.somethingWentWrong}</div>
+  }
 
   return (
     <div className={s.wrapper}>

@@ -1,4 +1,3 @@
-import { ru } from '@/shared/locales/ru'
 import {
   Aquarius,
   Aries,
@@ -13,8 +12,14 @@ import {
   Taurus,
   Virgo,
 } from '@/assets/icons'
+import { ru } from '@/shared/locales/ru'
 
 export const en: typeof ru = {
+  errors: {
+    somethingWentWrong: 'Something went wrong. Check your internet connection and try again!',
+    notFoundTitle: '404 Page Not Found',
+    notFoundDescription: "You seem to have landed on a page that doesn't exist.",
+  },
   names: {
     aries: 'Aries',
     taurus: 'Taurus',

@@ -1,9 +1,10 @@
-import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
+
+import { tg } from '@/app/telegram'
+import { useLocale } from '@/shared/lib/hooks'
 
 import s from './home.module.css'
-import { useLocale } from '@/shared/lib/hooks'
-import { tg } from '@/app/telegram'
 
 export const Home = () => {
   const { l } = useLocale(tg.initDataUnsafe.user.language_code)
@@ -18,7 +19,7 @@ export const Home = () => {
         const Icon = l.icons[key as keyof typeof l.icons]
 
         return (
-          <Link className={s.link} to={key}>
+          <Link className={s.link} to={`/horoscope/${key}`}>
             <div className={s.iconWrapper}>
               <Icon className={s.icon} fill={'var(--tg-theme-text-color)'} />
             </div>

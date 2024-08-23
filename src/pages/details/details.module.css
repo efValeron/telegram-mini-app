@@ -1,3 +1,12 @@
+.error {
+  position: relative;
+  padding: 0.5rem;
+  height: 100vh;
+  display: grid;
+  gap: 1rem;
+  place-content: center;
+}
+
 .wrapper {
   position: relative;
   padding: 0.5rem;
