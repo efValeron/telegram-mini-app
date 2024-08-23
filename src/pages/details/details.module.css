@@ -1,0 +1,33 @@
+.wrapper {
+  position: relative;
+  padding: 0.5rem;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+.descriptionWrapper {
+  display: flex;
+  flex-direction: column;
+  transition: all 100ms;
+  gap: 0.75rem;
+  background-color: var(--tg-theme-secondary-bg-color);
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.name {
+  font-size: 24px;
+  text-align: center;
+}
+
+.description {
+  font-size: 16px;
+  color: var(--tg-theme-text-color);
+  opacity: 70%;
+}
+
+.period {
+  font-size: 14px;
+  color: var(--tg-theme-subtitle-text-color);
+}

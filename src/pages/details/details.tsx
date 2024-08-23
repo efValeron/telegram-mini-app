@@ -1,11 +1,16 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import { useEffect } from 'react'
-import { tg } from 'src/telegram.ts'
+import { tg } from '../../telegram.ts'
 import { useQuery } from '@tanstack/react-query'
-import { GetHoroscope } from 'src/types/server-responses.ts'
-import { horoscopeNames } from 'src/horoscope-names.ts'
+import { GetHoroscope } from '../../types/server-responses.ts'
+import { useLocale } from '../../shared/lib/hooks/use-locale.ts'
+import { Ring } from '@uiball/loaders'
+
+import s from './details.module.css'
 
 export const Details = () => {
+  const { l, isRu } = useLocale(tg.initDataUnsafe.user.language_code)
+
   const navigate = useNavigate()
   const { name } = useParams()
 
@@ -23,7 +28,7 @@ export const Details = () => {
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
-            'language': tg.initDataUnsafe.user.language_code === 'ru' ? 'original' : 'translated',
+            'language': isRu ? 'original' : 'translated',
             'period': 'today',
             'sign': name
           })
@@ -38,20 +43,18 @@ export const Details = () => {
 
   if (!name) return <div>no name</div>
 
-  if (isLoading) return <div>loading...</div>
-
   if (error) return <div>Error: {error.message}</div>
 
-  if (!data) return <div>no data</div>
-
-  const horoscopeName = tg.initDataUnsafe.user.language_code === 'ru'
-    ? horoscopeNames[name as keyof typeof horoscopeNames].charAt(0).toUpperCase() + horoscopeNames[name as keyof typeof horoscopeNames].slice(1)
-    : name!.charAt(0).toUpperCase() + name!.slice(1)
-
   return (
-    <div>
-      <h1>{horoscopeName}</h1>
-      <p>{data}</p>
+    <div className={s.wrapper}>
+      <div className={`loaderWrapper ${isLoading ? 'visible' : 'invisible'}`}>
+        <Ring size={30} speed={1.5} color={'var(--tg-theme-text-color)'}/>
+      </div>
+      <div className={`${s.descriptionWrapper} ${isLoading ? 'invisible' : 'visible'}`}>
+        <h1 className={s.name}>{l.names[name as keyof typeof l.names]}</h1>
+        <p className={s.description}>{data && data}</p>
+        <small className={s.period}>{l.periods[name as keyof typeof l.periods].from} — {l.periods[name as keyof typeof l.periods].to}</small>
+      </div>
     </div>
   )
 }
