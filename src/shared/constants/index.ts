@@ -10,5 +10,5 @@ export const horoscopeNames = {
   sagittarius: 'стрелец',
   capricorn: 'козерог',
   aquarius: 'водолей',
-  pisces: 'рыбы'
+  pisces: 'рыбы',
 } as const

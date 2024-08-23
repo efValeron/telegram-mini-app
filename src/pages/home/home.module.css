@@ -8,7 +8,7 @@
 .link {
   border-radius: 5px;
   display: grid;
-  grid-template-columns:  auto 1fr;
+  grid-template-columns: auto 1fr;
   gap: 0.5rem;
   background-color: var(--tg-theme-secondary-bg-color);
   transition-duration: 100ms;

@@ -1,12 +1,12 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import { useEffect } from 'react'
-import { tg } from '../../telegram.ts'
 import { useQuery } from '@tanstack/react-query'
-import { GetHoroscope } from '../../types/server-responses.ts'
-import { useLocale } from '../../shared/lib/hooks/use-locale.ts'
 import { Ring } from '@uiball/loaders'
 
 import s from './details.module.css'
+import { useLocale } from '@/shared/lib/hooks'
+import { tg } from '@/app/telegram'
+import { GetHoroscope } from '@/shared/lib/types/server-responses'
 
 export const Details = () => {
   const { l, isRu } = useLocale(tg.initDataUnsafe.user.language_code)
@@ -16,29 +16,31 @@ export const Details = () => {
 
   useEffect(() => {
     tg.BackButton.show().onClick(() => navigate(-1))
-  }, [ navigate ])
+  }, [navigate])
 
   const { data, isLoading, error } = useQuery({
-    queryKey: [ 'horoscopes', name ],
+    queryKey: ['horoscopes', name],
     queryFn: async () => {
       try {
-        const res = await (await fetch('https://poker247tech.ru/get_horoscope/', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            'language': isRu ? 'original' : 'translated',
-            'period': 'today',
-            'sign': name
+        const res = await (
+          await fetch('https://poker247tech.ru/get_horoscope/', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              language: isRu ? 'original' : 'translated',
+              period: 'today',
+              sign: name,
+            }),
           })
-        })).json()
+        ).json()
 
         return (res as GetHoroscope).horoscope
       } catch (e) {
         console.error(e)
       }
-    }
+    },
   })
 
   if (!name) return <div>no name</div>
@@ -48,12 +50,15 @@ export const Details = () => {
   return (
     <div className={s.wrapper}>
       <div className={`loaderWrapper ${isLoading ? 'visible' : 'invisible'}`}>
-        <Ring size={30} speed={1.5} color={'var(--tg-theme-text-color)'}/>
+        <Ring size={30} speed={1.5} color={'var(--tg-theme-text-color)'} />
       </div>
       <div className={`${s.descriptionWrapper} ${isLoading ? 'invisible' : 'visible'}`}>
         <h1 className={s.name}>{l.names[name as keyof typeof l.names]}</h1>
         <p className={s.description}>{data && data}</p>
-        <small className={s.period}>{l.periods[name as keyof typeof l.periods].from} — {l.periods[name as keyof typeof l.periods].to}</small>
+        <small className={s.period}>
+          {l.periods[name as keyof typeof l.periods].from} —{' '}
+          {l.periods[name as keyof typeof l.periods].to}
+        </small>
       </div>
     </div>
   )

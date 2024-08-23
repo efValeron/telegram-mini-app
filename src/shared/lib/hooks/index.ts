@@ -1,1 +1,1 @@
-export { useLocale } from './use-locale.ts'
+export { useLocale } from './use-locale'

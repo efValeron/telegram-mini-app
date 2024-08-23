@@ -1,17 +1,17 @@
 import {
-  Taurus,
   Aquarius,
-  Leo,
-  Gemini,
-  Pisces,
-  Virgo,
   Aries,
   Cancer,
-  Libra,
-  Scorpio,
   Capricorn,
-  Sagittarius
-} from '../assets/icons'
+  Gemini,
+  Leo,
+  Libra,
+  Pisces,
+  Sagittarius,
+  Scorpio,
+  Taurus,
+  Virgo,
+} from '@/assets/icons'
 
 export const ru = {
   names: {
@@ -26,57 +26,57 @@ export const ru = {
     sagittarius: 'Стрелец',
     capricorn: 'Козерог',
     aquarius: 'Водолей',
-    pisces: 'Рыбы'
+    pisces: 'Рыбы',
   },
   periods: {
     aries: {
       from: '21 марта',
-      to: '20 апреля'
+      to: '20 апреля',
     },
     taurus: {
       from: '21 апреля',
-      to: '20 мая'
+      to: '20 мая',
     },
     gemini: {
       from: '21 мая',
-      to: '21 июня'
+      to: '21 июня',
     },
     cancer: {
       from: '22 июня',
-      to: '22 июля'
+      to: '22 июля',
     },
     leo: {
       from: '23 июля',
-      to: '23 августа'
+      to: '23 августа',
     },
     virgo: {
       from: '24 августа',
-      to: '23 сентября'
+      to: '23 сентября',
     },
     libra: {
       from: '24 сентября',
-      to: '23 октября'
+      to: '23 октября',
     },
     scorpio: {
       from: '24 октября',
-      to: '22 ноября'
+      to: '22 ноября',
     },
     sagittarius: {
       from: '23 ноября',
-      to: '21 декабря'
+      to: '21 декабря',
     },
     capricorn: {
       from: '22 декабря',
-      to: '20 января'
+      to: '20 января',
     },
     aquarius: {
       from: '21 января',
-      to: '20 февраля'
+      to: '20 февраля',
     },
     pisces: {
       from: '21 февраля',
-      to: '20 марта'
-    }
+      to: '20 марта',
+    },
   },
   icons: {
     aries: Aries,
@@ -90,6 +90,6 @@ export const ru = {
     sagittarius: Sagittarius,
     capricorn: Capricorn,
     aquarius: Aquarius,
-    pisces: Pisces
-  }
+    pisces: Pisces,
+  },
 }
