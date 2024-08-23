@@ -55,11 +55,11 @@ export const Details = () => {
       </div>
       <div className={`${s.descriptionWrapper} ${isLoading ? 'invisible' : 'visible'}`}>
         <h1 className={s.name}>{l.names[name as keyof typeof l.names]}</h1>
-        <p className={s.description}>{data && data}</p>
         <small className={s.period}>
           {l.periods[name as keyof typeof l.periods].from} —{' '}
           {l.periods[name as keyof typeof l.periods].to}
         </small>
+        <p className={s.description}>{data && data}</p>
       </div>
     </div>
   )
