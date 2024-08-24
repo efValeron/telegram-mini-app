@@ -17,20 +17,6 @@ export const Details = () => {
 
   useEffect(() => {
     tg.BackButton.show().onClick(() => navigate(-1))
-
-    tg.isBiometricAvailable &&
-      tg.BiometricManager.init()
-        .biometricType('finger')
-        .authenticate(
-          'Scan your finger',
-          (authenticatedSuccessfully: boolean, biometricToken: string) => {
-            alert(
-              authenticatedSuccessfully
-                ? `Authenticated successfully. Token: ${biometricToken}`
-                : 'Authentication failed'
-            )
-          }
-        )
   }, [navigate])
 
   const { data, isLoading, error } = useQuery({

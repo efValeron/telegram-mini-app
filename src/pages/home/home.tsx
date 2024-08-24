@@ -11,13 +11,6 @@ export const Home = () => {
 
   useEffect(() => {
     tg.BackButton.hide()
-
-    tg.isBiometricAvailable &&
-      tg.BiometricManager.init()
-        .biometricType('finger')
-        .requestAccess('Scan your finger', (authenticatedSuccessfully: boolean) => {
-          alert(authenticatedSuccessfully ? `Authenticated successfully.` : 'Authentication failed')
-        })
   }, [])
 
   return (
